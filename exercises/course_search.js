@@ -39,42 +39,69 @@ let courses = [
 ];
 
 // When does the PROG200 course start?
-function findStartDate(CourseId) {
-  for (let i = 0; i < courses.length; i++) {
-    if (courses[i].CourseId == CourseId) {
-      return courses[i].StartDate;
+for (let index = 0; index < courses.length; index++) {
+    const course = courses[index];
+    //and find the course with a given courseid
+    if (course.CourseId == "PROG200") {
+      console.log("The PROG200 course starts on: " + course.StartDate);
     }
   }
-}
-
-let CourseIdToFind = "PROG200";
-let startDate = findStartDate(CourseIdToFind);
-console.log(CourseIdToFind);
-console.log(startDate);
 
 // What is the title of the PROJ500 course?
-function findCourseTitle(courseId) {
-  for (let i = 0; i < courses.length; i++) {
-    if (courses[i].CourseId == courseId) {
-      return courses[i].Title;
+for (let index = 0; index < courses.length; index++) {
+    const course = courses[index];
+    if (course.CourseId == "PROJ500") {
+      console.log("The PROJ500 course title is: " + course.Title);
     }
   }
-}
-
-let courseIdToFind = "PROJ500";
-let courseTitle = findCourseTitle(courseIdToFind);
-console.log(courseIdToFind);
-console.log(courseTitle);
 
 // What are the titles of the courses that cost $50 or less?
-function findCoursesUnderPrice(price) {
-  for (let i = 0; i < price.length; i++) {
-    if (price[i].Fee <= 50) {
-      return price[i].Title;
+for (let index = 0; index < courses.length; index++) {
+    const course = courses[index];
+    const fee = Number(course.Fee);
+    if (fee <= 50) {
+      console.log("This course is less than $50: " + course.Title);
     }
   }
-}
+  // What are the titles of the courses that cost $50 or less in an array?
+  for (let index = 0; index < courses.length; index++) {
+    const course = courses[index];
+    const fee = Number(course.Fee);
+    if (fee <= 50) {
+      console.log("This course is less than $50: " + course.Title);
+    }
+  }
 
-let findTitle = findCoursesUnderPrice(courses);
-console.log(findTitle);
+  
+// function findCoursesUnderPrice(price) {
+//   for (let i = 0; i < price.length; i++) {
+//     if (price[i].Fee <= 50.00) {
+//       return price[i].Title;
+//     }
+//   }
+// }
+
+// let findTitle = findCoursesUnderPrice(courses);
+// console.log(findTitle);
+
+
+// for (let i = 0; i < courses.length; i++) {
+//     if (courses[i].Fee <= 50) {
+//         console.log(courses[i].Title);
+//     }
+    
+// }
+
+// function findTitle(price) {
+//     for (let i = 0; i < price.length; i++) {
+//         if (price[i].Fee <= 50) {
+//             console.log("test"+price[i].Title);
+//         }
+        
+//     } 
+// }
+// let under50 = findTitle(courses);
+// console.log(under50);
+
+
 // What classes meet in "Classroom 1"?
