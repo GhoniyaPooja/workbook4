@@ -44,7 +44,7 @@
         const TeamCode = teamList.value;
         for (const team of teams) {
           if (team.code == TeamCode) {
-            const details = `The ${team.name} (${team.code}) plays in ${team.plays}`;
+            const details = `You selected the  ${team.name} (${team.code}) who play in ${team.plays}`;
             messageParagraph.innerText = details;
           }
         }
