@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Category Selection</title>
+  </head>
+  <body>
+    <main>
+      <form>
+        
+        <label>Category</label>
+        <div>
+          <select id="categoryList">
+            <option value="">Select a category</option>
+            <option value="drinks">Drinks</option>
+            <option value="entrees">Entrees</option>
+            <option value="desserts">Desserts</option>
+          </select>
+        </div>
+
+
+        
+        <label for="menuList">List</label><br />
+        <select id="menuList">
+          <option value="">Select a item</option>
+        </select>
+      
+      </form>
+    </main>
+    <script>
+      let menu = {
+        drinks: ["Water", "Tea", "Sweet Tea", "Coke", "Dr. Pepper", "Sprite"],
+        entrees: [
+          "Hamburger w/ Fries",
+          "Grilled Cheese w/ Tater Tots",
+          "Grilled Chicken w/ Veggies",
+          "Chicken Fried Steak w/ Mashed Potatoes",
+          "Fried Shrimp w/ Coleslaw",
+          "Veggie Plate",
+        ],
+        desserts: ["Cheesecake", "Chocolate Cake", "Snickerdoodle Cookie"],
+      };
+
+      const categoryList = document.getElementById("categoryList");
+      const menuList = document.getElementById("menuList");
+
+      window.onload = function () {
+        categoryList.onchange = displayCategory;
+      };
+
+      function displayCategory() {
+        menuList.options.length = 0;
+
+        if (categoryList.value !== "") {
+          for (const menuItem of menu[categoryList.value]) {
+            let menuOption = new Option(menuItem);
+
+            menuList.appendChild(menuOption);
+          }
+        } else {
+          let menuOption = new Option("Choose category");
+
+          menuList.appendChild(menuOption);
+        }
+      }
+    </script>
+  </body>
+</html>
